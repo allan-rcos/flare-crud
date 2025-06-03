@@ -7,8 +7,10 @@ function Hello() {
     useEffect(() => {
         const fetchData = async () => {
             const result = await fetch(ENV.API_URL() + 'hello/');
-            const body = await result.json();
-            setName(body['hello']);
+            if (result.status === 200) {
+                const body = await result.json();
+                setName(body['hello']);
+            }
         }
         fetchData();
     }, []);
