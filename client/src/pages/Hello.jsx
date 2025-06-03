@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import ENV from "../ENV";
+import ENV from "../config/ENV";
 
 
 function Hello() {
